@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>MQTT</Name>
+  <Repository>eclipse-mosquitto</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1544045898</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>1883</HostPort>
+        <ContainerPort>1883</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>9001</HostPort>
+        <ContainerPort>9001</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/MQTT/config/</HostDir>
+      <ContainerDir>/mosquitto/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/MQTT/Data</HostDir>
+      <ContainerDir>/mosquitto/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/MQTT/Logs/</HostDir>
+      <ContainerDir>/mosquitto/log</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="Config" Target="/mosquitto/config" Default="/mnt/user/appdata/MQTT/config/" Mode="rw" Description="Container Path: /mosquitto/config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/MQTT/config/</Config>
+  <Config Name="Data" Target="/mosquitto/data" Default="/mnt/user/appdata/MQTT/Data" Mode="rw" Description="Container Path: /mosquitto/data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/MQTT/Data</Config>
+  <Config Name="Logs" Target="/mosquitto/log" Default="/mnt/user/appdata/MQTT/Logs/" Mode="rw" Description="Container Path: /mosquitto/log" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/MQTT/Logs/</Config>
+  <Config Name="Port_1" Target="1883" Default="1883" Mode="tcp" Description="Container Port: 1883" Type="Port" Display="always" Required="true" Mask="false">1883</Config>
+  <Config Name="Port_2" Target="9001" Default="9001" Mode="tcp" Description="Container Port: 9001" Type="Port" Display="always" Required="true" Mask="false">9001</Config>
+</Container>
